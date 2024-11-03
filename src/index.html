@@ -4,48 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Evaluación módulo 1</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./scss/main.scss" />
   </head>
   <body>
-    <header>
-      <load src="./images/ico-menu.svg"/>
+    <header class="header">
+      <div class="header_menu">
+        <img class="header_menu--hamburger" src="./images/ico-menu.svg" alt="Menú hamburguesa"/>
+      </div>
     </header>
     <main>
-      <select>
-      ANONYMOUS PROXY 
-        In hac habitasse platea dictumst.
-        botón
-      </select>
-      <select>  
-        Insomnia Tips
-        Looking Through A Window 
-        Donec accumsan, nulla ut volutpat porttitor, quam odio tempus felis, at luctus ex diam nec lectus. Vivamus semper sodales rutrum.
-        Go
-      </select>
-      <select> 
-        3 Reasons To Purchase
-        Ut sed metus
-        Lorem ipsum dolor sit amet, consecteur.
-        Curabitur ac erat
-        Mauris mattis urna quis lorem molestie.
-        Morbi dictum
-        Aliquam in dolor et dolor tincidunt.
-        More reasons
-      </select>
+      <section class="spotlight">
+        <div>
+          <img class="spotlight_cover" src="./images/cover.jpeg"/>
+        </div>
+        <div class="spotlight_text">  
+          <h1>ANONYMOUS PROXY</h1> 
+          <p>In hac habitasse platea dictumst.</p>
+        </div>
+        <div class="spotlight_img">  
+          <img src="./images/ico-scroll-down.svg"/>
+        </div>
+      </section>
+      <section class="article">
+        <div class="article_text">  
+          <h6>Insomnia Tips</h6>
+          <h2>Through A Window</h2> 
+          <p>Donec accumsan, nulla ut volutpat porttitor, quam odio tempus felis, at luctus ex diam nec lectus. Vivamus semper sodales rutrum.</p>
+        </div>
+        <div class="article_button">  
+          <h5>Go</h5>
+        </div>        
+      </section>
+      <section class="options"> 
+        <div class="options_title">
+          <h2>Reasons To Purchase</h2>
+        </div>
+        <div class="options_text">
+          <div class="options_text--one">
+            <h3>Ut sed metus</h3>
+            <p>Lorem ipsum dolor sit amet, consecteur.</p>
+          </div>
+          <div class="options_text--two">
+            <h3>Curabitur ac erat</h3>
+            <p>Mauris mattis urna quis lorem molestie.</p>
+          </div>
+          <div class="options_text--three">
+            <h3>Morbi dictum</h3>
+            <p>Aliquam in dolor et dolor tincidunt.</p>
+          </div>
+        </div>
+        <div class="options_button">
+          <h5>More reasons</h5>
+        </div>
+      </section>
     </main>
-    <footer>   
-      boton flecha
-      ARTICLES 
-      BOOKS
-      EVENTS 
-      REASONS
-      TIPS
-      TWITTER
-      INSTAGRAM
-      MASTODON.SOCIAL
-      &copy;2022
-      we&#x2764;components
+    <footer class="footer">   
+      <div class="footer_button">
+        <img class="footer_button--img" src="./images/ico-arrow.svg">
+      </div>
+      <div class="footer_link">
+        <div class="footer_link--one">
+          <p>ARTICLES</p> 
+          <p>BOOKS</p>
+          <p>EVENTS</p> 
+          <p>REASONS</p>
+          <p>TIPS</p>
+        </div>
+        <div class="footer_link--two">
+          <p>TWITTER</p>
+          <p>INSTAGRAM</p>
+          <p>MASTODON.SOCIAL</p>
+        </div>
+        <div class="footer_link--three">
+          <p>&copy;2022</p>
+          <p>we&#x2764;components</p>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
