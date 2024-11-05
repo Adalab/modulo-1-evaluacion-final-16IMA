@@ -3,13 +3,18 @@
   margin: 0;
   padding: 0;
 }
-.root{
-  font-family: 'Roboto', sans-serif;
-}
+@import "font_color";
+@import "display";
+@keyframes slidein-top {
+  to {
+    margin-top: 0%;
+   }
+  }
+  
+
 h1 {
   font-size: 2.625rem;
-  font-family: 'Roboto Slab', sans-serif;
-  font-weight: 800;
+  @include font_stack_high;
   @media screen and (min-width: 768px) {
     font-size: 4.5rem;
   }
@@ -19,8 +24,7 @@ h1 {
 }
 h2 {
   font-size: 1.5rem;
-  font-family: 'Roboto Slab', sans-serif;
-  font-weight: 800;
+  @include font_stack_high;
   @media screen and (min-width: 768px) {
     font-size: 1.75rem;
   }
@@ -30,30 +34,28 @@ h2 {
 }
 h3 {
   font-size: 1.125rem;
-  font-family: 'Roboto Slab', sans-serif;
-  font-weight: 700;
+  @include font_stack_medium;
   @media screen and (min-width: 768px) {
     font-size: 1.5rem;
   }
   }
-  h5 {
+h5 {
     font-size: 1.25rem;
-    font-family: 'Roboto Slab', sans-serif;
-    font-weight: 500;
+    @include font_stack_regular;
   }
 h6 {
   font-size: 1rem;
-  font-family: 'Roboto Slab', sans-serif;
-  font-weight: 400;
-  color: #8ccbea;
+  @include font_stack_light;
+  color: $resalt-color
+  
+  ;
   @media screen and (min-width: 1280px) {
     font-size: 1.25rem;
   }  
 }
 p {
   font-size: 1rem;
-  font-family: 'Roboto Slab', sans-serif;
-  font-weight: 400;
+  @include font_stack_light;
   @media screen and (min-width: 768px) {
     font-size: 1.25rem;
   }
@@ -63,8 +65,7 @@ p {
   }
 a {
   font-size: 1rem;
-  font-family: 'Roboto Slab', sans-serif;
-  font-weight: 400;
+  @include font_stack_light;
   @media screen and (min-width: 768px) {
     font-size: 1.25rem;
   }
@@ -77,12 +78,10 @@ a {
   z-index: 1;
 }
 .header_menu{
+  @include flex_content_align_center;
   width: 40px;
   height: 40px;
-  background-color:#0271bc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: $color-menu;
   position: fixed;  
 }
 .spotlight{
@@ -101,10 +100,8 @@ a {
 }
 .spotlight_text {
   z-index: 1;
-  display: flex;
+  @include flex_content_align_center;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   top: 67%;
   left: 50%;
@@ -112,21 +109,19 @@ a {
   text-align: center;
     h1, p {
       margin: 10px;
-      color: white;
+      color: $color-contrast;
     }
     .spotlight_img {
-      background-color: white;
+      background-color: $color-contrast;
       height: 40px;
       width: 40px;
       border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex_content_align_center;
       margin: 10px;
     }
   }
 .article {
-  background-color: white;
+  background-color: $color-contrast;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -139,17 +134,19 @@ a {
   &_text {
     line-height: 2;
   }
+  &_button:hover{
+        width: 200px;
+        }
   &_button{
-    background-color: white;
-    border: solid 3px  #f26002;
-    color:  #f26002;
+    background-color: $color-contrast;
+    border: solid 3px  $button-color;
+    color:  $button-color;
     border-radius: 22.5px;
     width: 91px;
     height: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex_content_align_center;
     margin-top: 20px;
+    transition: width 2s;
     @media screen and (min-width: 1280px) {
       width: 160px;
       height: 45px;
@@ -157,12 +154,10 @@ a {
   }
 }
 .options {
-  background-color: #eff9ff;
-  display: flex;
+  background-color: $color-background;
+  @include flex_content_align_center;
   flex-direction: column;
   width: 100%;
-  justify-items: center;
-  align-items: center;
   padding-top: 30px;
   padding-bottom: 30px;
     &_title{
@@ -183,18 +178,20 @@ a {
           grid-template-rows: 1fr;
         }
     }
+    &_button:hover{
+        width: 300px;
+        }
     &_button{
-        background-color: #f26002;
-        color:  white;
+        background-color: $button-color;
+        color:  $color-contrast;
         border-radius: 22.5px;
         width: 184px;
         height: 45px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex_content_align_center;
         text-align: center;
         margin-top: 20px;
         margin-bottom: 20px;
+        transition: width 2s;
           @media screen and (min-width: 768px) {
             width: 210px;
           }
@@ -204,25 +201,23 @@ a {
     }
 }
 .footer {
-  background-color: #304268;
+  background-color: $footer-color;
   display: flex;
-  color: white;
+  color: $color-contrast;
   flex-direction: column;
   align-items: center;
   padding-bottom: 30px;
   position: relative;
   line-height: 2;
     &_button{
-        background-color: white;
+        background-color: $color-contrast;
         border-radius: 100%;
         width: 30px;
-        height: 30px;;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        height: 30px;
+        @include flex_content_align_center;
         position: absolute;
         top: -15px;
-     }
+            }
     &_link{
       @media screen and (min-width: 768px) {
         width: 100%;
@@ -235,7 +230,7 @@ a {
       }
     }
     a {
-      color: white;
+      color: $color-contrast;
       text-decoration: none;
       display:flex;
       justify-content: center;
@@ -249,7 +244,7 @@ a {
     }
     &_link--three-hiden {
       .heart {
-        color: red;
+        color: $heart-color;
       }
       @media screen and (max-width: 767px) {
         display: none;
@@ -257,7 +252,7 @@ a {
     }
     &_link--three {
       .heart{
-        color:red
+        color: $heart-color
       }
       @media screen and (min-width: 768px) {
        display: none;

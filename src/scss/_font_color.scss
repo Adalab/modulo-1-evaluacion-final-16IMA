@@ -1,0 +1,31 @@
+/* Partial que contiene las características de la font y 
+los colores establecidos*/ 
+
+
+$font_stack: 'Roboto Slab', sans-serif;
+$color-menu: #0271bc;
+$color-contrast: white;
+$button-color: #f26002;
+$color-background: #eff9ff;
+$footer-color: #304268;
+$heart-color: red;
+$resalt-color: #8ccbea; 
+
+@mixin font_stack_high {
+    font-family: $font_stack;
+    font-weight: 800;  
+}
+@mixin font_stack_medium {
+    font-family: $font_stack;
+    font-weight: 700;  
+}
+@mixin font_stack_regular {
+    font-family: $font_stack;
+    font-weight: 500;  
+}
+@mixin font_stack_light {
+    font-family: $font_stack;
+    font-weight: 400;  
+}
+
+
